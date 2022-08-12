@@ -1,0 +1,23 @@
+{
+  "name": "full-stack-todo",
+  "version": "1.0.0",
+  "description": "Full Stack Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm run start",
+    "dev": "npm run build & (cd server && npm run start)",
+    "build": "cd client && npm run build & (cd server && npm run build)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malachimda101/full-stack-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malachimda101/full-stack-todo/issues"
+  },
+  "homepage": "https://github.com/malachimda101/full-stack-todo#readme"
+}
