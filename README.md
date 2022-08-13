@@ -1,2 +1,2 @@
 # full-stack-todo
-Full Stack Project
+Full Stack To Do List Project
