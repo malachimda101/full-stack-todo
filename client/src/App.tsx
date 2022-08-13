@@ -1,7 +1,6 @@
 const App = () => {
-  return (
-    <div>Hello World!</div>
-  ); 
-}
+  const test: string = 'asd';
+  return <div>Hello World yayay!</div>;
+};
 
 export default App;
