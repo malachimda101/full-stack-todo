@@ -1,6 +1,16 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PageNotFound from './page.not.found';
+import TodoList from './todo.list/todo.list';
+
 const App = () => {
-  const test: string = 'asd';
-  return <div>Hello World yayay!</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/todo" element={<TodoList />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

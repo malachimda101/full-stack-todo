@@ -1,4 +1,4 @@
-import { todoRouter } from './todo';
+import { todoRouter } from './todo.routes';
 import express from 'express';
 
 const apiRouter = express.Router();
