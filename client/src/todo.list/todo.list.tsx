@@ -10,6 +10,7 @@ const TodoList = () => {
     axios
       .get('/api/todo')
       .then((res) => {
+        console.log('data', res.data);
         setTodoList(res.data);
       })
       .catch((err) => {});
