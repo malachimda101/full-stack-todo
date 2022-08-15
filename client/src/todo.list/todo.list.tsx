@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Todo from './todo';
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
 
+  useEffect(() => {
+    axios
+      .get('/api/todo')
+      .then((res) => {
+        setTodoList(res.data);
+      })
+      .catch((err) => {});
+  }, []);
+
   const handleAddTodo = () => {
-    setTodoList((prevList) => [...prevList, { message: inputValue, id: crypto.randomUUID() }]);
+    const newTodo: Todo = {
+      message: inputValue,
+      id: crypto.randomUUID()
+    };
+    axios.post('/api/todo', { todo: newTodo });
+    setTodoList((prevList) => [...prevList, newTodo]);
     setInputValue('');
   };
 

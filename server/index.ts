@@ -6,6 +6,8 @@ const app: Express = express();
 
 app.use(express.static(path.resolve(__dirname, '../../client/build')));
 
+app.use(express.json());
+
 app.use('/api', apiRouter);
 
 app.get('*', (req: Request, res: Response) => {
@@ -13,5 +15,5 @@ app.get('*', (req: Request, res: Response) => {
 });
 
 app.listen(8000, () => {
-  console.log(`⚡️[server]: Server running at https://localhost:${8000}`);
+  console.log(`⚡️[server]: Server running at http://localhost:${8000}`);
 });

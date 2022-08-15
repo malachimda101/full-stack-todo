@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 interface Props {
@@ -9,11 +10,13 @@ const Todo: React.FC<Props> = ({ todo, setTodoList }) => {
   const [edit, setEdit] = useState<string | null>(null);
 
   const handleDelete = () => {
+    axios.delete(`/api/todo/${todo.id}`);
     setTodoList((prevList) => prevList.filter((prevTodo: Todo) => prevTodo.id !== todo.id));
   };
 
   const handleEdit = () => {
     if (!edit) return;
+    axios.patch('/api/todo', { ...todo, message: edit });
     setTodoList((prevList) => {
       todo.message = edit;
       return [...prevList];
