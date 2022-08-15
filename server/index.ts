@@ -16,5 +16,5 @@ app.get('*', (req: Request, res: Response) => {
 });
 
 app.listen(config.PORT, () => {
-  console.log(`⚡️[server]: Server running at http://localhost:${8000}`);
+  console.log(`⚡️[server]: Server running at http://localhost:${config.PORT}`);
 });
