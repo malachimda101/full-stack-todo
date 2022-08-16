@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import morgan from 'morgan';
 import path from 'path';
 import { apiRouter } from './src/routes/routes';
 import config from './src/configs/config';
@@ -20,6 +21,8 @@ const app: Express = express();
 app.use(express.static(path.resolve(__dirname, '../../client/build')));
 
 app.use(express.json());
+
+app.use(morgan('dev'));
 
 app.use('/api', apiRouter);
 

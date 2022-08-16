@@ -23,7 +23,6 @@
     "url": "https://github.com/malachimda101/full-stack-todo/issues"
   },
   "homepage": "https://github.com/malachimda101/full-stack-todo#readme",
-  "devDependencies": {},
   "dependencies": {
     "prettier": "^2.7.1"
   }
