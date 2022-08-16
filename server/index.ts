@@ -8,11 +8,11 @@ dbConfig
   .initialize()
   .then(() => {
     console.log(
-      `Database connection initialized. You are now connected to table '${config.DB_NAME}' as '${config.DB_USER}' on host '${config.DB_HOST}'`
+      `Database connection initialized. You are now connected to database '${config.DB_NAME}' as '${config.DB_USER}' on host '${config.DB_HOST}'`
     );
   })
   .catch((err) => {
-    console.error('Error during Data Source initialization:', err);
+    console.error('Error during database initialization:', err);
   });
 
 const app: Express = express();
