@@ -11,7 +11,7 @@ dbConfig
       `Database connection initialized. You are now connected to database '${config.DB_NAME}' as '${config.DB_USER}' on host '${config.DB_HOST}'`
     );
   })
-  .catch((err) => {
+  .catch((err: any) => {
     console.error('Error during database initialization:', err);
   });
 
