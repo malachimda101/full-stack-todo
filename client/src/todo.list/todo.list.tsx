@@ -10,7 +10,6 @@ const TodoList = () => {
     axios
       .get('/api/todo')
       .then((res) => {
-        console.log('data', res.data);
         setTodoList(res.data);
       })
       .catch((err) => {});
@@ -21,7 +20,7 @@ const TodoList = () => {
       message: inputValue,
       id: crypto.randomUUID()
     };
-    axios.post('/api/todo', { todo: newTodo });
+    axios.post('/api/todo', newTodo);
     setTodoList((prevList) => [...prevList, newTodo]);
     setInputValue('');
   };
